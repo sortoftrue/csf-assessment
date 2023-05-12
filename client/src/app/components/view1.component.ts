@@ -28,6 +28,10 @@ export class View1Component implements OnInit {
     })
   }
 
+  back() {
+    this.router.navigate([''])
+  }
+
   public submit() {
     const formData = new FormData();
 
