@@ -1,0 +1,15 @@
+<div *ngIf="returnedBundle">
+    <h1>
+        {{returnedBundle.title}}<br>
+    </h1>
+    by {{returnedBundle.name}} on {{returnedBundle.date}}<br>
+    {{returnedBundle.comments}}<br>
+
+    <div *ngFor="let imageUrl of returnedBundle.urls">
+        <img [src]="imageUrl" width="300">
+      </div>
+
+</div>
+
+<button type="button" (click)="back()">back to Upload</button>
+<button type="button" (click)="backHome()">back to Home</button>

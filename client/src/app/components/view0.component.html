@@ -1,0 +1,9 @@
+<h1>Photo Storage</h1>
+
+<button (click)="goUpload()">Upload</button>
+
+<div *ngIf="returnedSummaries">
+    <div *ngFor="let summary of returnedSummaries">
+        <a [routerLink]="['/view2',summary.bundleId]"> {{summary.title}} {{summary.date}}</a>
+    </div>
+</div>

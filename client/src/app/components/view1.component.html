@@ -1,0 +1,7 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+    Name: <input type="text" formControlName="name"> <br>
+    Title: <input type="text" formControlName="title"> <br>
+    Comments: <input type="text" formControlName="comments"> <br>
+    Archive: <input type="file" accept="*" #file formControlName="zipFile"> <br>
+    <button type="button">Cancel </button> <button type="submit" [disabled]="form.invalid">Submit</button>
+</form>
