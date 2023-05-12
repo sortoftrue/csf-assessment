@@ -11,7 +11,7 @@ import { Bundle } from '../models/Bundle';
 })
 export class View2Component {
 
-  // private origin:string = "http://localhost:8080"
+  //private origin: string = "http://localhost:8080"
   private origin:string = ""
 
   bundleId!: String;
@@ -35,7 +35,17 @@ export class View2Component {
           )
           .subscribe((response: any) => {
             console.log(response);
-            this.returnedBundle=response;
+            this.returnedBundle = response;
+
+            const substring = this.returnedBundle.date.substring(0, 10)
+            const [day, month, year, end] = substring.split('-');
+            // console.log(day)
+            // console.log(month)
+            // console.log(year)
+            const date = new Date(+year, +month - 1, +day);
+            console.log(date)
+            this.returnedBundle.date = date
+
           });
 
         // this.returnedBundle = await this.getBundle(this.bundleId);

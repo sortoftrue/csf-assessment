@@ -1,6 +1,6 @@
 export interface Bundle{
     bundleId: string
-    date: string
+    date: any
     title: string
     name: string
     comments: string
@@ -9,6 +9,6 @@ export interface Bundle{
 
 export interface BundleSummary{
     bundleId: string
-    date: string
+    date: any
     title: string
 }

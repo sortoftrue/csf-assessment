@@ -2,7 +2,7 @@
     <h1>
         {{returnedBundle.title}}<br>
     </h1>
-    by {{returnedBundle.name}} on {{returnedBundle.date}}<br>
+    by {{returnedBundle.name}} on {{returnedBundle.date | date:'MMM dd yyyy'}}<br>
     {{returnedBundle.comments}}<br>
 
     <div *ngFor="let imageUrl of returnedBundle.urls">

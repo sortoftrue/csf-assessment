@@ -26,6 +26,13 @@ public class ArchiveRepository {
 	// Do not change the method's name
 	// Write the native mongo query that you will be using in this method
 	//
+	// db.uploads.insert({
+	// 	bundleId:<BUNDLE_ID>,
+	// 	date:<DATE>,
+	// 	title:<TITLE>,
+	// 	comments:<COMMENTS>,
+	// 	urls: [ {URL1}, {URL2}...]
+	// })
 	//
 	public Object recordBundle(JsonObject bundleData) throws Exception {
 
@@ -45,6 +52,7 @@ public class ArchiveRepository {
 	// Do not change the method's name
 	// Write the native mongo query that you will be using in this method
 	//
+	// db.uploads.find({bundleId:<BUNDLE_ID>})
 	//
 	public String getBundleByBundleId(String bundleId) {
 
@@ -66,6 +74,12 @@ public class ArchiveRepository {
 	// Do not change the method's name
 	// Write the native mongo query that you will be using in this method
 	//
+	// db.uploads.find(
+	//	{},
+	// 	{
+	// 		_id:0, bundleId:1, date:1, title:1
+	// 	}
+	// )
 	//
 	public String getBundles() {
 

@@ -11,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class View0Component {
 
-  // private origin:string = "http://localhost:8080"
+  //private origin:string = "http://localhost:8080"
   private origin:string = ""
 
   returnedSummaries!: BundleSummary[];
@@ -22,8 +22,22 @@ export class View0Component {
     ngOnInit():void{
       this.getSummaries().then(
         (result) => {
-          console.info(result)
+          //console.info(result)
           this.returnedSummaries = result
+
+          this.returnedSummaries.map(
+            (summary)=>{
+              console.info(summary.date)
+              const substring = summary.date.substring(0,10)
+              const[day,month,year,end] = substring.split('-');
+              // console.log(day)
+              // console.log(month)
+              // console.log(year)
+              const date = new Date(+year, +month -1 , +day);
+              console.log(date)
+              summary.date = date
+            }
+          )
         }
       );
     }
